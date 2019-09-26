@@ -46,6 +46,7 @@
         display: inline-block;
         margin-left: 20px;
         margin-top: 1px;
+
         &:hover {
           color: @dark;
         }
@@ -149,6 +150,7 @@
 
           a {
             color: white !important;
+
             &:hover {
               color: white !important;
             }
@@ -175,16 +177,17 @@
       }
 
       .jstree-anchor {
-        color: @dark !important;
+        color: @dark  !important;
         outline: none;
         padding-right: 0;
         text-decoration: none;
         width: calc(~'100% - 20px');
         display: inline-flex;
 
-        & > span {
-          color: @dark !important;
+        &>span {
+          color: @dark  !important;
         }
+
         &:hover {
           text-decoration: none !important;
         }
@@ -195,9 +198,10 @@
           max-width: 100%;
         }
 
-        .jstree-container-ul > .jstree-node {
+        .jstree-container-ul>.jstree-node {
           margin-left: 0px;
         }
+
         .jstree-node {
           line-height: 24px;
           margin-left: 16px;
@@ -205,9 +209,11 @@
 
         .jstree-wholerow {
           height: auto;
+
           &-hovered {
             background: #eff0f1;
           }
+
           &-clicked {
             background: #dbeeff;
           }
@@ -231,16 +237,19 @@
             margin-top: -1px;
             width: 20px;
           }
-          .jstree-open > .jstree-ocl,
-          .jstree-closed > .jstree-ocl {
+
+          .jstree-open>.jstree-ocl,
+          .jstree-closed>.jstree-ocl {
             background: none;
             position: relative;
             left: 3px;
           }
-          .jstree-open > .jstree-ocl {
+
+          .jstree-open>.jstree-ocl {
             .icon-v2(@octicons-chevron-down, @color: @dark, @hover-color: @dark, @font-size: 12px);
           }
-          .jstree-closed > .jstree-ocl {
+
+          .jstree-closed>.jstree-ocl {
             .icon-v2(@octicons-chevron-right, @color: @dark, @hover-color: @dark, @font-size: 12px);
           }
         }
@@ -254,18 +263,22 @@
         text-decoration: none;
         font-smoothing: antialiased;
       }
+
       .jstree-icon.tree,
       .jstree-icon.commit,
       .jstree-icon.file-generic {
         margin-top: 0;
         margin-right: 2px;
       }
+
       .jstree-icon.tree {
         .icon-v2(@octicons-file-directory, @color: @blue, @hover-color: @blue);
       }
+
       .jstree-icon.commit {
         .icon-v2(@octicons-file-submodule, @color: @gray, @hover-color: @gray);
       }
+
       .jstree-icon.file-generic {
         .icon-v2(@octicons-file-text, @color: @gray, @hover-color: @gray);
       }
@@ -280,6 +293,7 @@
         margin-right: 5px;
 
         font-size: 80%;
+
         span {
           padding-left: 5px;
         }
@@ -294,16 +308,19 @@
     }
 
     .octotree-error-view {
-      & > form {
+      &>form {
         div {
           padding: 8px;
         }
+
         input {
           width: 100%;
         }
+
         .error {
           color: @error;
         }
+
         .button {
           margin-right: 5px;
         }
@@ -311,30 +328,31 @@
     }
 
     .octotree-settings-view {
-      & > form {
+      &>form {
         padding: 8px;
 
         .octotree-token-actions {
           float: right;
         }
 
-        & > div {
+        &>div {
           margin-bottom: 12px;
         }
 
         .octotree-settings-showin {
-          > div {
+          >div {
             padding-left: 5px;
           }
         }
 
         label {
           font-weight: normal !important;
+
           &.disabled {
             color: @gray-less;
           }
 
-          input + span {
+          input+span {
             position: relative;
             top: 1px;
             left: 2px;
@@ -350,7 +368,7 @@
           resize: vertical;
           height: 60px;
         }
-        
+
         .octotree-disclaimer {
           display: block;
           font-size: 12px;
@@ -375,7 +393,7 @@
     cursor: pointer;
     z-index: 1; // these are float, show above header view
 
-    & > span {
+    &>span {
       line-height: 1;
       display: inline-block;
       text-decoration: none;
@@ -401,13 +419,13 @@
     transition: right 0.25s ease-in 0.2s, opacity 0.35s ease-in 0.2s;
     cursor: pointer;
 
-    > .octotree-toggle-icon {
+    >.octotree-toggle-icon {
       .icon-v2(@octicons-chevron-right, @font-size: 15px, @color: @dark, @hover-color: @dark);
       left: 3px;
       top: 5px;
     }
 
-    > span {
+    >span {
       color: @dark;
       display: inline-block;
       font-size: 12px;
@@ -442,11 +460,13 @@
       &:hover {
         color: black;
       }
+
       &.show {
         opacity: 1;
       }
-      & > .arrow,
-      & > .arrow:after {
+
+      &>.arrow,
+      &>.arrow:after {
         position: absolute;
         display: block;
         width: 0;
@@ -454,7 +474,8 @@
         border-color: transparent;
         border-style: solid;
       }
-      & > .arrow {
+
+      &>.arrow {
         left: 15px;
         top: -6px;
         border-width: 6px;
@@ -462,7 +483,8 @@
         border-top-width: 0;
         border-bottom-color: rgba(0, 0, 0, 0.25);
       }
-      & > .arrow:after {
+
+      &>.arrow:after {
         border-width: 5px;
         content: '';
         top: 1px;
@@ -470,11 +492,44 @@
         border-top-width: 0;
         border-bottom-color: white;
       }
-      & > .content {
+
+      &>.content {
         padding: 9px 14px;
         font-size: 13px;
       }
     }
+  }
+
+  a.octotree-search {
+    top: (@header-height - @icon-size) / 2;
+    right: 46px;
+    width: @icon-size;
+    height: @icon-size;
+
+    .octotree-icon-search {
+      .icon-v2(@octicon-search, @font-size: @icon-size, @color: @gray, @hover-color: white);
+    }
+
+    &.selected .octotree-icon-search:before {
+      color: white;
+    }
+
+  }
+
+  .searchbar {
+    display: none;
+    width: 100%;
+  }
+
+  #searchbar-input {
+    background-color: @dark-less;
+    font-size: 16px;
+    width: 100%;
+    color: white;
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
   }
 
   a.octotree-pin {
@@ -562,6 +617,7 @@
           0% {
             transform: rotate(0deg);
           }
+
           100% {
             transform: rotate(360deg);
           }
