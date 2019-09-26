@@ -510,16 +510,16 @@
       .icon-v2(@octicon-search, @font-size: @icon-size, @color: @gray, @hover-color: white);
     }
 
+    &:hover {
+      color: @gray-less;
+    }
+
     &.selected .octotree-icon-search:before {
       color: white;
     }
 
   }
 
-  .searchbar {
-    display: none;
-    width: 100%;
-  }
 
   #searchbar-input {
     background-color: @dark-less;

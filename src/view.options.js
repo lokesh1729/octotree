@@ -3,7 +3,12 @@ class OptionsView {
     this.store = store;
     this.adapter = adapter;
     this.$toggler = $dom.find('.octotree-settings').click(this.toggle.bind(this));
-    this.$searcher = $dom.find('octotree-search').click(this.$search.bind(this));
+    this.$header = $dom.find('.octotree-view-header');
+    this.$settings = $dom.find('.octotree-settings');
+    this.$pin = $dom.find('.octotree-pin');
+    this.$search_input = $dom.find('#searchbar-input');
+    this.$body = $dom.find('.octotree-view-body');
+    this.$searcher = $dom.find('.octotree-search').click(this.search.bind(this));
     this.$view = $dom.find('.octotree-settings-view').submit((event) => {
       event.preventDefault();
       this.toggle(false);
@@ -47,17 +52,21 @@ class OptionsView {
   }
 
   search() {
-    $dom.find('.octotree-view-header').hide();
-    $dom.find('.octotree-settings').hide();
-    $dom.find('.octotree-pin').hide();
-    $dom.find('.searchbar').show();
-    $dom.find('#searchbar-input').keyup(function() {
-      setTimeout(function() {
-        var searchTerm = $dom.find('#searchbar-input').val();
-        this.$view
-          .find('.octotree-view-body').jstree(true).search(searchTerm)
-      }, 250);
-    });
+    try {
+      this.$header.hide();
+      this.$settings.hide();
+      this.$pin.hide();
+      this.$search_input.css('display', 'inline-block');
+      var self=this;
+      this.$search_input.keyup(function() {
+        setTimeout(function() {
+          var searchTerm = self.$search_input.val();
+          self.$body.jstree(true).search(searchTerm);
+        }, 250);
+      });
+    } catch(err) {
+      throw err;
+    }
   }
 
   _load() {
